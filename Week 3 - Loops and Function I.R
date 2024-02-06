@@ -129,12 +129,19 @@ for(i in numbers){
 ## [1] "180000 is not less than five or is not an integer (or both!)."
 ## [1] "-20.5 is not less than five or is not an integer (or both!)."
 
+#5. Question Time
 
+numbers <- c(1, 1, 3, 5, 8, 13, 21)
+for(i in numbers){
+  print(sqrt(i))
+}
 
-
-
-
-
+movie <- vector()
+titanic_quote <- c('Jack', 'I', 'will', 'never', 'let', 'goooo
+for(i in length(icespice_quote)){
+  output[i] <- nchar
+  print()
+}
 
 
 
