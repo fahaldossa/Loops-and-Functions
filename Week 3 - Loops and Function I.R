@@ -1,11 +1,12 @@
 #Basic Looping
-#create a for loop that runs 5 times (1 to 5)
+#2.1 create a for loop that runs 5 times (1 to 5)
 #each time the for loop runs, print the value of i
 for(i in 1:5){
   print(i)    
 }
 # in this case, we have printed the object called 'i' using the {}
 
+#2.2
 x <- 0 # make a new scalar called x with a value of 0
 for(i in 1:10){  # create a for loop that runs 10 times (1 to 10)
 x <- x + i      # within our for loop we are adding the value of i to the value of x
@@ -63,6 +64,76 @@ for(donkey in 1:length(shrek_quote)){
 #1:length() - changes it into a numeric vector (meaning 1 to the lenght of the shrek quote)
 #shrek_quote
 #shrek_quote[donkey] - telling it to print the words specified in donkey
+
+#3 Saving outputs
+#common requirement for loops is saving outputs using the output vector
+output <- vector() # creates an empty vector that we can fill with values
+input <- c('red', 'yellow', 'green', 'blue', 'purple')
+for(i in 1:length(input)){
+  output[i] <- nchar(input[i]) #nchar shows the lenght of the word
+}
+print(output)
+##[1] 3 6 5 4 6
+
+#Create a for loop that takes a vector named words with the elements 'buzz' 'cross' 'broads' 'fore' and '', adds the word 'word' to each of them, and saves them as a new vector called wordwords. Google is your friend… Your outputted vector should be like so:
+words <- vector()
+input <- c('buzz', 'cross', 'broads', 'fore', '')
+for(i in 1:length(input)){
+  words[i] <- paste(input[i], 'words', sep='')
+}
+print(words)
+
+#4. Condition statements
+#4.1 Using if()
+numbers <- c(1, 4, 7, 33, 12.1, 180000,-20.5)
+for(i in numbers){
+  if(i > 5){
+    print(i)
+  }
+}
+## [1] 7
+## [1] 33
+## [1] 12.1
+## [1] 180000
+
+numbers <- c(1, 4, 7, 33, 12.1, 180000,-20.5)
+for(i in numbers){
+  if(i < 5 & i %% 1 == 0){
+    print(paste(i, ' is less than five and an integer.', sep = ''))
+  }
+}
+## [1] "1 is less than five and an integer."
+## [1] "4 is less than five and an integer."
+
+nums <- c(11, 22, 33, -0.01, 25, 100000, 7.2, 0.3, -2000, 20, 17, -11, 0)
+for(i in numbers){
+  if(i < 50 & i %% 2 == 0){
+    print(paste(i, ' is less than 50 and divsible by 2.', sep = ''))
+  }
+}
+
+#4.2 Using else
+numbers <- c(1, 4, 7, 33, 12.1, 180000,-20.5)
+for(i in numbers){
+  if(i < 5 & i %% 1 == 0){
+    print(paste(i, ' is less than five and an integer.', sep = ''))
+  } else {
+    print(paste(i, ' is not less than five or is not an integer (or both!).', sep = ''))
+  }
+}
+## [1] "1 is less than five and an integer."
+## [1] "4 is less than five and an integer."
+## [1] "7 is not less than five or is not an integer (or both!)."
+## [1] "33 is not less than five or is not an integer (or both!)."
+## [1] "12.1 is not less than five or is not an integer (or both!)."
+## [1] "180000 is not less than five or is not an integer (or both!)."
+## [1] "-20.5 is not less than five or is not an integer (or both!)."
+
+
+
+
+
+
 
 
 
