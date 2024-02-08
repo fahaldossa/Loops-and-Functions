@@ -18,7 +18,7 @@ print(x)       #print x
 x <- 0
 for(i in 1:10){
   x <- x + i
-  print(x)
+  print(x) #add print(x) into the command loop
 }
 print(x) # this shows the process of the addition
 
@@ -64,6 +64,7 @@ for(donkey in 1:length(shrek_quote)){
 #1:length() - changes it into a numeric vector (meaning 1 to the lenght of the shrek quote)
 #shrek_quote
 #shrek_quote[donkey] - telling it to print the words specified in donkey
+#[] are used for indexing into a vector
 
 #3 Saving outputs
 #common requirement for loops is saving outputs using the output vector
@@ -81,7 +82,7 @@ input <- c('buzz', 'cross', 'broads', 'fore', '')
 for(i in 1:length(input)){
   words[i] <- paste(input[i], 'words', sep='')
 }
-print(words)
+wordswords <- print(words)
 
 #4. Condition statements
 #4.1 Using if()
@@ -111,8 +112,10 @@ for(i in numbers){
     print(paste(i, ' is less than 50 and divsible by 2.', sep = ''))
   }
 }
+##[1] "8 is less than 50 and divsible by 2."
 
 #4.2 Using else
+#We can add a layer of complexity to our conditional statements by also defining what code to run if the conditional is FALSE by using else{}.
 numbers <- c(1, 4, 7, 33, 12.1, 180000,-20.5)
 for(i in numbers){
   if(i < 5 & i %% 1 == 0){
@@ -128,6 +131,29 @@ for(i in numbers){
 ## [1] "12.1 is not less than five or is not an integer (or both!)."
 ## [1] "180000 is not less than five or is not an integer (or both!)."
 ## [1] "-20.5 is not less than five or is not an integer (or both!)."
+
+#4.3 Using else if()
+numbers <- c(1, 4, 7, 33, 12.1, 180000,-20.5)
+for(i in numbers){
+  if(i < 5 & i %% 1 == 0){
+    print(paste(i, ' is less than five and an integer.', sep = ''))
+  } else if(i < 5 & i %% 1 != 0){
+    print(paste(i, ' is not an integer.', sep = ''))
+  } else if(i >= 5 & i %% 1 == 0){
+    print(paste(i, ' is not less than five.', sep = ''))
+  } else {
+    print(paste(i, ' is not less than five and is not an integer.', sep = ''))
+  }
+}
+
+#The difference between else{} and else if() is that else will be the complete FALSE of the if, but else if() lets you be more specific with else{}
+## [1] "1 is less than five and an integer."
+## [1] "4 is less than five and an integer."
+## [1] "7 is not less than five."
+## [1] "33 is not less than five."
+## [1] "12.1 is not less than five and is not an integer."
+## [1] "180000 is not less than five."
+## [1] "-20.5 is not an integer."
 
 #5. Question Time
 
